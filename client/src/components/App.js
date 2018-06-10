@@ -209,17 +209,6 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <h4
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: '1rem',
-                fontFamily: 'Lato'
-              }}
-            >
-              Searching Words....
-            </h4>
           </div>
         ) : (
           <div>
