@@ -287,7 +287,7 @@ p {
   animation: pulse-out 1200ms infinite;
   position: fixed;
   right: 0.5rem;
-  top: 77vh;
+  top: 75vh;
   border-radius: 50%;
   border: 3px solid #1ECD97;
   box-shadow: 0 0 5px #1ECD97;
@@ -296,7 +296,7 @@ p {
 .myPhotoLink {
   position: fixed;
   right: 1rem;
-  top: 78vh;
+  top: 76vh;
 }
 
 .myPhoto {
