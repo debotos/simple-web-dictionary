@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 
+import me from '../assets/me.png';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,26 @@ class App extends Component {
   }
   handleFormSubmit = e => {
     e.preventDefault();
-    console.log('Handle Submit Got A Call');
+    let word = this.state.searchingFor;
+    if (this.state.englishSearch) {
+      axios
+        .get(`/api/exact/eTob/${word}`)
+        .then(res => {
+          this.setState({ data: res.data });
+          this.setState({ loading: false });
+          console.log(res.data);
+        })
+        .catch(err => console.log('Error data Request!', err));
+    } else {
+      axios
+        .get(`/api/exact/bToe/${word}`)
+        .then(res => {
+          this.setState({ data: res.data });
+          this.setState({ loading: false });
+          console.log(res.data);
+        })
+        .catch(err => console.log('Error data Request!', err));
+    }
   };
   handleOnChangeInput = e => {
     let input = e.target.value.trim();
@@ -151,6 +172,22 @@ class App extends Component {
           />
           <br />
         </form>
+        <div className="ProfileContainer" style={{ position: 'relative' }}>
+          <div className="ProfileShadow" />
+          <a
+            className="myPhotoLink"
+            href="https://www.github.com/debotos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="myPhoto"
+              alt="About me"
+              title="Show Profile"
+              src={me}
+            />
+          </a>
+        </div>
         {this.state.loading ? (
           <div>
             <div className="searching-loader">
@@ -187,7 +224,7 @@ class App extends Component {
         ) : (
           <div>
             <div className="content-container">
-              <div className="list-body">{this.generateList()}</div>
+              <div className="list-body slideInUp">{this.generateList()}</div>
             </div>
           </div>
         )}

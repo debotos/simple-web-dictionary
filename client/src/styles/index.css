@@ -72,6 +72,39 @@
   border: 1px solid #1ECD97;
 }
 
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 /* All Typography */
 
 h5 {
@@ -238,5 +271,42 @@ p {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* My Profile */
+
+.ProfileShadow {
+  height: 6rem;
+  width: 6rem;
+  background-color: #1ECD97;
+  animation: pulse-out 1200ms infinite;
+  position: fixed;
+  right: 0.5rem;
+  top: 84vh;
+  border-radius: 50%;
+  border: 3px solid #1ECD97;
+  box-shadow: 0 0 5px #1ECD97;
+}
+
+.myPhotoLink {
+  position: fixed;
+  right: 1rem;
+  top: 85vh;
+}
+
+.myPhoto {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #1ECD97;
+  border: 3px solid #1ECD97;
+}
+
+@keyframes pulse-out {
+  0% {}
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
   }
 }
