@@ -286,8 +286,8 @@ p {
   background-color: #1ECD97;
   animation: pulse-out 1200ms infinite;
   position: fixed;
-  right: 0.5rem;
-  top: 75vh;
+  right: 0;
+  bottom: -5px !important;
   border-radius: 50%;
   border: 3px solid #1ECD97;
   box-shadow: 0 0 5px #1ECD97;
@@ -295,8 +295,8 @@ p {
 
 .myPhotoLink {
   position: fixed;
-  right: 1rem;
-  top: 76vh;
+  right: 0.5rem;
+  bottom: 0 !important;
 }
 
 .myPhoto {

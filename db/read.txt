@@ -1,1 +1,0 @@
-SELECT * FROM other WHERE serial = (SELECT serial FROM eng WHERE word LIKE DOG%);
