@@ -86,15 +86,24 @@ class App extends Component {
       return this.state.data.map((singleItem, index) => {
         return (
           <div key={index} className="list-item">
-            <div className="firstEntry">
+            <div className="firstEntry" style={{ fontWeight: '700px !important' }}>
               <h5>{singleItem.eng}</h5>
-              <h5>{singleItem.bangla}</h5>
+              <h5 style={{
+                  letterSpacing: '1px',
+                  fontSize: '30px',
+                  color: '#000000'
+                }}>{singleItem.bangla}</h5>
             </div>
 
-            <div className="secondEntry">
+            <div className="secondEntry" style={{ color: '#7F7F7F' }}>
               {singleItem.tr && <h5>Uttering: {singleItem.tr}</h5>}
               {singleItem.def && (
-                <h5>
+                <h5
+                	style={{
+                    fontFamily: "'Lato', sans-serif",
+                    fontWeight: 400
+                  }}
+                >
                   Defination:<hr />
                   {singleItem.def
                     .slice(1, singleItem.def.length - 1)
@@ -124,7 +133,7 @@ class App extends Component {
               )}
             </div>
 
-            <div className="thirdEntry">
+            <div className="thirdEntry" style={{ color: '#5F7BA1' }}>
               {singleItem.exm && (
                 <h5>
                   Example: <hr />
